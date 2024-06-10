@@ -1,3 +1,4 @@
+/* General Styling */
 * {
     margin: 0;
 }
@@ -107,80 +108,4 @@ footer {
 
 .footer-info {
     margin: 5px 0;
-}
-
-
-.form-container {
-    background: #363636;
-    border-radius: 10px;
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.form-container h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #fff;
-}
-
-.form-control {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.form-control input {
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-    color: #ffffff;
-    font-size: 1em;
-    background-color: #2b2b2b;
-}
-
-.form-control input:focus {
-    outline: none;
-    background: rgba(255, 255, 255, 0.3);
-    background-color: #2b2b2b;
-    
-}
-
-.form-control input::placeholder {
-    color: #a1a1a1;
-    opacity: 1;
-}
-
-.form-control label {
-    position: absolute;
-    top: -15px;
-    left: 15px;
-    color: #fff;
-    font-size: 0.8em;
-    transition: none;
-                      
-}
-
-.form-control input:focus + label,
-.form-control input:not(:placeholder-shown) + label {
-    font-size: 0.8em;
-    color: firebrick;
-}
-
-.form-text {
-    margin-top: 20px;
-    color: firebrick;
-}
-
-.form-text a {
-    color: gold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.form-text a:hover {
-    color: goldenrod;
 }
