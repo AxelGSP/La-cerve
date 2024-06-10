@@ -1,0 +1,183 @@
+/* Contenedor del borde superior */
+.header {
+    width: 100%;
+    background-color: #6b1e1e; /* Color de fondo del borde superior */
+    padding: 20px; /* Espaciado interno del borde superior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar el borde */
+    text-align: center; /* Centrar el contenido del contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Imagen centrada dentro del borde superior */
+.header img {
+    max-width: 100px; /* Tamaño máximo de la imagen */
+    height: auto; /* Ajustar la altura proporcionalmente */
+    display: inline-block; /* Mantener la imagen como un bloque en línea */
+}
+
+/* Asegurarse de que el body no tenga márgenes por defecto */
+body {
+    font-family: "Arial", sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #262629, #161617);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 80px; /* Añadir espacio para el header */
+}
+
+button {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid #facc61;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+    background-color: #363636;
+}
+
+button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #facc61;
+    z-index: -1;
+}
+
+button:hover,
+button:focus {
+    color: white;
+}
+
+button:hover:before,
+button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #303030, #121212);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    background: #363636; /* Fondo del formulario */
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título del formulario */
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fff;
+}
+
+/* Controles del formulario */
+.form-control {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-control input {
+    background: rgba(255, 255, 255, 0.2); /* Fondo del input */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Relleno interno */
+    width: 100%; /* Ancho del 100% del contenedor */
+    color: #ffffff; /* Color del texto */
+    font-size: 1em; /* Tamaño de fuente */
+    background-color: #2b2b2b;
+}
+
+.form-control input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.3); /* Fondo del input en foco */
+    background-color: #2b2b2b;
+    
+}
+
+/* Estilo del placeholder */
+.form-control input::placeholder {
+    color: #a1a1a1; /* Color del texto del placeholder */
+    opacity: 1; /* Asegura que el color se aplica correctamente */
+}
+
+/* Estilo del label */
+.form-control label {
+    position: absolute;
+    top: -15px; /* Movemos el label arriba del input */
+    left: 15px;
+    color: #fff;
+    font-size: 0.8em; /* Reducimos el tamaño de fuente */
+    transition: none; /* Eliminamos la transición */
+                      
+}
+
+/* Estilo del label cuando el input está en foco o tiene texto */
+.form-control input:focus + label,
+.form-control input:not(:placeholder-shown) + label {
+    font-size: 0.8em; /* Mantenemos el tamaño de fuente */
+    color: firebrick;
+}
+
+/* Texto del formulario */
+.form-text {
+    margin-top: 20px;
+    color: firebrick;
+}
+
+.form-text a {
+    color: gold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-text a:hover {
+    color: goldenrod;
+}
