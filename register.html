@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>indexbutbetter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styleDem.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="header">
+        <img src="assets/logo.png" alt="Imagen Centranda">
+    </div>
+    <div class="form-container">
+        <h1>CREAR CUENTA</h1>
+        <form action="register.php" method="post" id="signinThingy">
+            <div class="form-control">
+                <input type="text" name="username" required placeholder="¿Cómo quieres llamarte?">
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="form-control">
+                <input type="email" name="email" required placeholder="Introduce tu correo electrónico">
+                <label>Correo electrónico</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="password" required placeholder="Introduce tu contraseña">
+                <label>Contraseña</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="cpassword" required placeholder="Confirma tu contraseña">
+                <label>Confirmar Contraseña</label>
+            </div>
+            <button class="form-btn">Enviar</button>
+            <p class="form-text">¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+        </form>
+    </div>
+    <script src='thingySequel.js'></script>
+</body>
+</html>

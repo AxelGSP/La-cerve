@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styleDem.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header">
+        <img src="assets/logo.png" alt="Imagen Centranda">
+    </div>
+    <div class="form-container">
+        <h1>Ingresar</h1>
+        <form action="login.php" method="post" id="loginThingy">
+            <div class="form-control">
+                <input type="email" name="email" required placeholder="Introduce tu correo electrónico">
+                <label>Correo Electrónico</label>
+            </div>
+            <div class="form-control">
+                <input type="password" name="password" required placeholder="Introduce tu contraseña">
+                <label>Contraseña</label>
+            </div>
+            <button class="form-btn">Enviar</button>
+            <p class="form-text">¿No tiene una cuenta? <a href="register.html">¿Crear cuenta?</a></p>
+        </form>
+    </div>
+    <script src="thingySequel.js"></script>
+</body>
+</html>
