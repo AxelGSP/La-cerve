@@ -1,23 +1,20 @@
-/* Contenedor del borde superior */
 .header {
     width: 100%;
-    background-color: #6b1e1e; /* Color de fondo del borde superior */
-    padding: 20px; /* Espaciado interno del borde superior */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar el borde */
-    text-align: center; /* Centrar el contenido del contenedor */
+    background-color: #6b1e1e;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
     position: absolute;
     top: 0;
     left: 0;
 }
 
-/* Imagen centrada dentro del borde superior */
 .header img {
-    max-width: 100px; /* Tamaño máximo de la imagen */
-    height: auto; /* Ajustar la altura proporcionalmente */
-    display: inline-block; /* Mantener la imagen como un bloque en línea */
+    max-width: 100px;
+    height: auto;
+    display: inline-block;
 }
 
-/* Asegurarse de que el body no tenga márgenes por defecto */
 body {
     font-family: "Arial", sans-serif;
     color: #fff;
@@ -29,7 +26,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    padding-top: 80px; /* Añadir espacio para el header */
+    padding-top: 80px; 
 }
 
 button {
@@ -100,9 +97,8 @@ body {
     overflow: hidden;
 }
 
-/* Contenedor del formulario */
 .form-container {
-    background: #363636; /* Fondo del formulario */
+    background: #363636;
     border-radius: 10px;
     padding: 20px;
     width: 90%;
@@ -111,62 +107,56 @@ body {
     text-align: center;
 }
 
-/* Título del formulario */
 .form-container h1 {
     margin-bottom: 20px;
     font-size: 2em;
     color: #fff;
 }
 
-/* Controles del formulario */
 .form-control {
     position: relative;
     margin-bottom: 20px;
 }
 
 .form-control input {
-    background: rgba(255, 255, 255, 0.2); /* Fondo del input */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    padding: 10px; /* Relleno interno */
-    width: 100%; /* Ancho del 100% del contenedor */
-    color: #ffffff; /* Color del texto */
-    font-size: 1em; /* Tamaño de fuente */
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1em;
     background-color: #2b2b2b;
 }
 
 .form-control input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.3); /* Fondo del input en foco */
+    background: rgba(255, 255, 255, 0.3);
     background-color: #2b2b2b;
     
 }
 
-/* Estilo del placeholder */
 .form-control input::placeholder {
-    color: #a1a1a1; /* Color del texto del placeholder */
-    opacity: 1; /* Asegura que el color se aplica correctamente */
+    color: #a1a1a1;
+    opacity: 1;
 }
-
-/* Estilo del label */
+ 
 .form-control label {
     position: absolute;
-    top: -15px; /* Movemos el label arriba del input */
+    top: -15px;
     left: 15px;
     color: #fff;
-    font-size: 0.8em; /* Reducimos el tamaño de fuente */
-    transition: none; /* Eliminamos la transición */
+    font-size: 0.8em;
+    transition: none;
                       
 }
 
-/* Estilo del label cuando el input está en foco o tiene texto */
 .form-control input:focus + label,
 .form-control input:not(:placeholder-shown) + label {
-    font-size: 0.8em; /* Mantenemos el tamaño de fuente */
+    font-size: 0.8em;
     color: firebrick;
 }
 
-/* Texto del formulario */
 .form-text {
     margin-top: 20px;
     color: firebrick;

@@ -5,16 +5,6 @@
         <link rel="stylesheet" href="style.css">
         <title>La Cerve</title>
         <link rel="icon" href="assets/logo.png" type="image/x-icon">
-        <style>
-            .header-icon {
-                margin-right: 10px;
-                width: 150px;
-                cursor: pointer;
-            }
-            .header{
-                cursor: pointer;
-            }
-        </style>
     </head>
     <body>
         <header>
@@ -23,29 +13,11 @@
                 <h2 class="header-name"> La Cerve </h2>
             </div>
             <nav class="header-right">
-                <a class="header" id="NoLoginNoAccess1">Menú</a>
-                <a class="header" id="NoLoginNoAccess2">Opiniones</a>
+                <a href="menu.html">Menú</a>
+                <a href="opiniones.html">Opiniones</a>
                 <a href="https://www.google.com/maps/place/La+Cerve/@20.0626885,-98.3657316,17z/data=!3m1!4b1!4m6!3m5!1s0x85d056e7dd938b1b:0x72bee47af4020cbb!8m2!3d20.0626885!4d-98.3631567!16s%2Fg%2F11c58h7l2l?entry=ttu"> Maps </a>
-                <script>
-                        document.getElementById('NoLoginNoAccess1').onclick = function() {
-                            alert("Lo sentimos,no puede acceder a esta opcion sin un registro previo,lo invitamos a crear una cuenta personal");
-                        }
-                </script>
-                <script>
-                        document.getElementById('NoLoginNoAccess2').onclick = function() {
-                            alert("Lo sentimos,no puede acceder a esta opcion sin un registro previo,lo invitamos a crear una cuenta personal");
-                        }
-                </script>
             </nav>
-             <div>
-                <img src="assets/icon.png" alt="Logo" class="header-icon" id="iconMenu">
-                <div class="options-menu" id="optionsMenu">
-                <div class="option" id="loginOption">Login</div>
-                <div class="option" id="registerOption">Register</div>
-            </div>
-        </div>
-            <script src="scriptindex.js"></script>
-
+            <img src="assets/iconlogin.png" alt="Logo" class="header-logo">
         </header>
         <main>
             <div class="container1">
@@ -61,14 +33,9 @@
                     <div class="menu-grid">
                         <img src="assets/Micheladas.png" alt="Micheladas" class="menu-item">
                         <img src="assets/Michelada_dec.png" alt="Micheladas Decoradas con Camarones" class="menu-item">
-                        <img src="assets/Papitas.png" alt="Papas A La Francesa" class="menu-item">
+                        <img src="assets/snack3.jpg" alt="Aros de Cebolla" class="menu-item">
                     </div>
-                    <a class="cta-button" id="NoLoginNoAccess">Explorar nuestro menú</a>
-                    <script>
-                        document.getElementById('NoLoginNoAccess').onclick = function() {
-                            alert("Lo sentimos,no puede acceder a esta opcion sin un registro previo,lo invitamos a crear una cuenta personal");
-                        }
-                    </script>
+                <a href="menu.html" class="cta-button">Explorar nuestro menú</a>
             </section>
         </main>  
         <footer>

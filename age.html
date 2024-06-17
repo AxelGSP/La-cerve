@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Edad</title>
+    <link rel="stylesheet" href="styleSanabria.css">
+    <link rel="icon" href="assets/logo.png" type="image/x-icon">
+</head>
+<body>
+     <header>
+                <img src="assets/logo.png" alt="Logo" class="header-logo">
+     </header>
+        <main>
+            <br>
+        </main>
+    <div class="container">
+        <h1>¿ERES MAYOR DE EDAD?</h1>
+        <h4>Por términos de política y privacidad, requerimos conocer tu edad.</h4>
+        <form id="ageVerificationForm">
+            <div class="form-group">
+                <div class="form-control">
+                    <label for="day">Día</label>
+                    <select id="day" required>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="month">Mes</label>
+                    <select id="month" required>
+                        <option value="1">Enero</option>
+                        <option value="2">Febrero</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Mayo</option>
+                        <option value="6">Junio</option>
+                        <option value="7">Julio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Septiembre</option>
+                        <option value="10">Octubre</option>
+                        <option value="11">Noviembre</option>
+                        <option value="12">Diciembre</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="year">Año</label>
+                    <select id="year" required>
+                    </select>
+                </div>
+            </div>
+            <button type="button" class="btn" onclick="verifyAge()">Ingresar</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
