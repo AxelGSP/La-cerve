@@ -44,7 +44,7 @@ function verifyAge() {
 
     if (isOfAge) {
         localStorage.setItem('ageVerified', 'true');
-        window.location.href = 'index.html';
+        window.location.href = 'index.php';
     } else {
         alert('No puedes ingresar, no cumples con la mayoría de edad.');
         localStorage.setItem('attemptedUnderage', 'true');
