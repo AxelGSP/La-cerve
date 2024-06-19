@@ -31,8 +31,8 @@ session_start();
                     <a href="menu.html">Menú</a>
                     <a href="opiniones.html">Opiniones</a>
                 <?php else: ?>
-                    <a class="header" id="denied">Menú</a>
-                    <a class="header" id="denied">Opiniones</a>
+                    <a class="header denied">Menú</a>
+                    <a class="header denied">Opiniones</a>
                 <?php endif; ?>
                 <a href="https://www.google.com/maps/place/La+Cerve/@20.0626885,-98.3657316,17z/data=!3m1!4b1!4m6!3m5!1s0x85d056e7dd938b1b:0x72bee47af4020cbb!8m2!3d20.0626885!4d-98.3631567!16s%2Fg%2F11c58h7l2l?entry=ttu"> Maps </a>
             </nav>
@@ -67,7 +67,7 @@ session_start();
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.html" class="cta-button">Explorar nuestro menú</a>
                 <?php else: ?>
-                    <a class="cta-button" id="denied">Explorar nuestro menú</a>
+                    <a class="cta-button denied">Explorar nuestro menú</a>
                 <?php endif; ?>
             </section>
         </main>  
@@ -87,8 +87,10 @@ session_start();
         </footer>
     </body>
     <script>
-        document.getElementById('denied').onclick = function() {
-            alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
-        }
+        document.querySelectorAll('.denied').forEach(element => {
+            element.onclick = function() {
+                alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
+            };
+        });
     </script>
 </html>
