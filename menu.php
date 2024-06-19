@@ -18,6 +18,75 @@ session_start();
             .header{
                 cursor: pointer;
             }
+
+            main {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
+     
+            .smenu-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                width: 100%;
+                max-width: 1200px;
+                padding: 20px;
+            }
+
+            .smenu-product {
+                background-position: center;
+                background-size: cover;
+                border-radius: 12px;
+                color: white;
+                height: 500px;
+                overflow: hidden;
+                position: relative;
+                transition: transform 0.5s ease;
+            }
+
+            .smenu-product:hover {
+                transform: scale(1.05);
+            }
+
+            .smenu-product::before {
+                background: rgba(0, 0, 0, 0.8);
+                bottom: 0;
+                content: "";
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: opacity 0.5s ease, height 0.5s ease;
+                z-index: 1;
+            }
+
+            .smenu-product .content {
+                left: 50%;
+                opacity: 0;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                transition: opacity 0.5s ease;
+                z-index: 1;
+            }
+
+            .smenu-product .content .name {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .smenu-product .content .price {
+                font-size: 18px;
+            }
+
+            .smenu-product:hover::before,
+            .smenu-product:hover .content {
+                opacity: 1;
+            }
         </style>
     </head>
     <body>
@@ -50,26 +119,9 @@ session_start();
             <script src="scriptindex.js"></script>
         </header>
         <main>
-            <div class="container1">
-                <section class="container">
-                    <h1>Bienvenido a La Cerve</h1>
-                    <p>Descubre el lugar perfecto para disfrutar de una noche especial con amigos o familia!!!. Ofrecemos los mejores snacks y micheladas en un ambiente único.</p>
-                    <img src="assets/Escena.png" alt="Ambiente de La Cerve" class="promo-image">
-                </section>
+            <div class="smenu-container">
+                <?php include 'getProducts.php'; ?>
             </div>
-            <section class="menu-section">
-                <h2>Lo Que Tenemos por Ofrecerte !!!</h2>
-                <div class="menu-grid">
-                    <img src="assets/Micheladas.png" alt="Micheladas" class="menu-item">
-                    <img src="assets/Michelada_dec.png" alt="Micheladas Decoradas con Camarones" class="menu-item">
-                    <img src="assets/Papitas.png" alt="Papas A La Francesa" class="menu-item">
-                </div>
-                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="menu.html" class="cta-button">Explorar nuestro menú</a>
-                <?php else: ?>
-                    <a class="cta-button denied">Explorar nuestro menú</a>
-                <?php endif; ?>
-            </section>
         </main>  
         <footer>
             <div class="footer-container">
