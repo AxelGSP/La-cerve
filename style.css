@@ -157,7 +157,7 @@ footer {
 
 .cta-button {
     display: inline-block;
-    background-color: #ff007f;
+    background-color: #6b1e1e;
     color: white;
     font-size: 18px;
     padding: 10px 20px;
@@ -168,7 +168,7 @@ footer {
 }
 
 .cta-button:hover {
-    background-color: #ff0055;
+    background-color: #541111;
 }
 
 .promo-image{
