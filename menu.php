@@ -11,113 +11,10 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleMenu.css">
         <title>La Cerve</title>
         <link rel="icon" href="assets/logo.png" type="image/x-icon">
-        <style>
-            .header-icon {
-                margin-right: 10px;
-                width: 150px;
-                cursor: pointer;
-            }
-            .header{
-                cursor: pointer;
-            }
-
-            main {
-                align-items: center;
-                display: flex;
-                flex-direction: column;
-            }
-     
-            .smenu-container {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
-                width: 100%;
-                max-width: 1200px;
-                padding: 20px;
-            }
-
-            .smenu-product {
-                background-position: center;
-                background-size: cover;
-                border-radius: 12px;
-                color: white;
-                height: 500px;
-                overflow: hidden;
-                position: relative;
-                transition: transform 0.5s ease;
-            }
-
-            .smenu-product:hover {
-                transform: scale(1.05);
-            }
-
-            .smenu-product::before {
-                background: rgba(0, 0, 0, 0.8);
-                bottom: 0;
-                content: "";
-                left: 0;
-                opacity: 0;
-                position: absolute;
-                right: 0;
-                top: 0;
-                transition: opacity 0.5s ease, height 0.5s ease;
-                z-index: 1;
-            }
-
-            .smenu-product .content {
-                left: 50%;
-                opacity: 0;
-                position: absolute;
-                text-align: center;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                transition: opacity 0.5s ease;
-                z-index: 1;
-            }
-
-            .smenu-product .content .name {
-                font-size: 24px;
-                font-weight: bold;
-                margin-bottom: 10px;
-            }
-
-            .smenu-product .content .price {
-                font-size: 18px;
-            }
-
-            .smenu-product:hover::before,
-            .smenu-product:hover .content {
-                opacity: 1;
-            }
-            .search-container {
-                position: relative;
-                width: 700px;
-                margin: 12px 10px;
-                --accent-color: #a3e583;
-            }
-
-            .search-bar {
-                border-radius: 25px;
-                box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
-                max-height: 36px;
-                background-color: #e8e8e8;
-                transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-                transition-duration: 200ms;
-                transition-property: background-color;
-                color: #0f0f0f;
-                font-size: 14px;
-                font-weight: 500;
-                padding: 14px;
-                margin-top: 8px;
-                width: 100%;
-                border-left: none;
-                border-bottom: none;
-                border-right: none;
-            }
-        </style>
+        <style src="styleMenu.css"> </style>
     </head>
     <body>
         <header>
@@ -149,7 +46,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                 <?php endif; ?>
             </div>
         </div>
-            <script src="scriptindex.js"></script>
+        <script src="scriptindex.js"></script>
         </header>
         <main>
             <div class="search-container">
@@ -157,6 +54,12 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             </div>
             <div class="smenu-container">
                 <?php include 'getProducts.php'; ?>
+            </div>
+            <div class="tcart-container">
+                <p class="tcart-text"> Le' Carrito </p>
+                <div class="tcart-box"></div>
+                <div class="total-amount">Total: $0.00</div>
+                <button class="purchase-button">Purchase</button>
             </div>
         </main>  
         <footer>
@@ -174,25 +77,6 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             </div>
         </footer>
     </body>
-    <script>
-        document.querySelectorAll('.denied').forEach(element => {
-            element.onclick = function() {
-                alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
-            };
-        });
-
-        document.getElementById('search-bar').addEventListener('input', function(e) {
-        var searchValue = e.target.value.toLowerCase();
-        var productElements = document.querySelectorAll('.smenu-product');
-
-        productElements.forEach(function(product) {
-            var productName = product.querySelector('.name').textContent.toLowerCase();
-            if (productName.includes(searchValue)) {
-                product.style.display = '';
-            } else {
-                product.style.display = 'none';
-            }
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="scriptMenu.js"> </script>
 </html>

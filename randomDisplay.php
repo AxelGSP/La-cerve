@@ -18,8 +18,6 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<img src='" . $row["image_path"] . "' alt='" . $row["name"] . "' class='menu-item'/>";
     }
-} else {
-    echo "No se encontraron productos.";
 }
 
 $conn->close();

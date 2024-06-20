@@ -39,7 +39,7 @@ session_start();
                     <a href="menu.php">Menú</a>
                     <a href="opiniones.html">Opiniones</a>
                     <?php if ($_SESSION['role'] === 'admin'): ?>
-                        <a href="admin_.php">Admin</a>
+                        <a href="admin.php">Admin</a>
                     <?php endif; ?>
                 <?php else: ?>
                     <a class="header denied">Menú</a>
@@ -58,7 +58,7 @@ session_start();
                 <?php endif; ?>
             </div>
         </div>
-            <script src="scriptindex.js"></script>
+        <script src="scriptindex.js"></script>
         </header>
         <main>
             <div class="container1">
