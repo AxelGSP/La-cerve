@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <html lang="es">
@@ -87,6 +92,31 @@ session_start();
             .smenu-product:hover .content {
                 opacity: 1;
             }
+            .search-container {
+                position: relative;
+                width: 700px;
+                margin: 12px 10px;
+                --accent-color: #a3e583;
+            }
+
+            .search-bar {
+                border-radius: 25px;
+                box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+                max-height: 36px;
+                background-color: #e8e8e8;
+                transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+                transition-duration: 200ms;
+                transition-property: background-color;
+                color: #0f0f0f;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 14px;
+                margin-top: 8px;
+                width: 100%;
+                border-left: none;
+                border-bottom: none;
+                border-right: none;
+            }
         </style>
     </head>
     <body>
@@ -99,6 +129,9 @@ session_start();
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.php">Menú</a>
                     <a href="opiniones.html">Opiniones</a>
+                    <?php if ($_SESSION['role'] === 'admin'): ?>
+                        <a href="admin.php">Admin</a>
+                    <?php endif; ?>
                 <?php else: ?>
                     <a class="header denied">Menú</a>
                     <a class="header denied">Opiniones</a>
@@ -119,6 +152,9 @@ session_start();
             <script src="scriptindex.js"></script>
         </header>
         <main>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Buscar productos..." class="search-bar">
+            </div>
             <div class="smenu-container">
                 <?php include 'getProducts.php'; ?>
             </div>
@@ -143,6 +179,20 @@ session_start();
             element.onclick = function() {
                 alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
             };
+        });
+
+        document.getElementById('search-bar').addEventListener('input', function(e) {
+        var searchValue = e.target.value.toLowerCase();
+        var productElements = document.querySelectorAll('.smenu-product');
+
+        productElements.forEach(function(product) {
+            var productName = product.querySelector('.name').textContent.toLowerCase();
+            if (productName.includes(searchValue)) {
+                product.style.display = '';
+            } else {
+                product.style.display = 'none';
+            }
+            });
         });
     </script>
 </html>

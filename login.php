@@ -20,19 +20,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'] ?? null;
 
     if ($username && $password) {
-        $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
+        $stmt = $conn->prepare("SELECT id, password, role FROM users WHERE username = ?");
         if ($stmt === false) {
             die("Error preparing statement: " . $conn->error);
         }
         $stmt->bind_param("s", $username);
         $stmt->execute();
-        $stmt->bind_result($user_id, $hashed_password);
+        $stmt->bind_result($user_id, $hashed_password, $user_role);
         $stmt->fetch();
         $stmt->close();
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['logged_in'] = true;
+            $_SESSION['role'] = $user_role;
             header("Location: index.php");
             exit();
         } else {

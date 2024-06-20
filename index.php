@@ -18,6 +18,14 @@ session_start();
             .header{
                 cursor: pointer;
             }
+
+            .cta-button {
+                background-color: #6b1e1e;
+            }
+
+            .cta-button:hover {
+                background-color: #541111;
+            }
         </style>
     </head>
     <body>
@@ -30,6 +38,9 @@ session_start();
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.php">Menú</a>
                     <a href="opiniones.html">Opiniones</a>
+                    <?php if ($_SESSION['role'] === 'admin'): ?>
+                        <a href="admin_.php">Admin</a>
+                    <?php endif; ?>
                 <?php else: ?>
                     <a class="header denied">Menú</a>
                     <a class="header denied">Opiniones</a>
@@ -60,9 +71,7 @@ session_start();
             <section class="menu-section">
                 <h2>Lo Que Tenemos por Ofrecerte !!!</h2>
                 <div class="menu-grid">
-                    <img src="assets/Micheladas.png" alt="Micheladas" class="menu-item">
-                    <img src="assets/Michelada_dec.png" alt="Micheladas Decoradas con Camarones" class="menu-item">
-                    <img src="assets/Papitas.png" alt="Papas A La Francesa" class="menu-item">
+                    <?php include 'randomDisplay.php'; ?>
                 </div>
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.html" class="cta-button">Explorar nuestro menú</a>
