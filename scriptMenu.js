@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                           <span class="item-name">${name}</span>
                                           <span class="item-price">Precio: $${price.toFixed(2)}</span>
                                       </div>
-                                      <button class="remove-item" data-id="${id}">Remove</button>`;
+                                      <button class="remove-item" data-id="${id}">Eliminar</button>`;
 
                 tcartBox.appendChild(cartItem);
 

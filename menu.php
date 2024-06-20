@@ -59,7 +59,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                 <p class="tcart-text"> Le' Carrito </p>
                 <div class="tcart-box"></div>
                 <div class="total-amount">Total: $0.00</div>
-                <button class="purchase-button">Purchase</button>
+                <button class="purchase-button">Descargar Ticket</button>
             </div>
         </main>  
         <footer>

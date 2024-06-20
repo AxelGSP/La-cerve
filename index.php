@@ -74,7 +74,7 @@ session_start();
                     <?php include 'randomDisplay.php'; ?>
                 </div>
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="menu.html" class="cta-button">Explorar nuestro menú</a>
+                    <a href="menu.php" class="cta-button">Explorar nuestro menú</a>
                 <?php else: ?>
                     <a class="cta-button denied">Explorar nuestro menú</a>
                 <?php endif; ?>
