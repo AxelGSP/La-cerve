@@ -29,7 +29,7 @@ if ($_SESSION['role'] !== 'admin') {
             <nav class="header-right">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.php">Menú</a>
-                    <a href="opiniones.html">Opiniones</a>
+                    <a href="opiniones.php">Opiniones</a>
                     <?php if ($_SESSION['role'] === 'admin'): ?>
                         <a href="admin.php">Admin</a>
                     <?php endif; ?>
@@ -50,13 +50,13 @@ if ($_SESSION['role'] !== 'admin') {
                 <?php endif; ?>
             </div>
         </div>
-            <script src="scriptindex.js"></script>
+        <script src="scriptindex.js"></script>
         </header>
         <main>
             <div class="tabs">
                 <div class="tab" data-table="users">users</div>
                 <div class="tab" data-table="products">products</div>
-                <div class="tab" data-table="phrases">phrases</div>
+                <div class="tab" data-table="reviews">reviews</div>
             </div>
             <div class="tab-content">
                 <div class="loading">like si lees esto</div>
