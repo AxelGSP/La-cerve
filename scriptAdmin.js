@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             html += `
                 <td>
-                    <button class="save-btn" data-id="${row.id}" data-table="${tableName}">Save</button>
-                    <button class="delete-btn" data-id="${row.id}" data-table="${tableName}">Delete</button>
+                    <button class="save-btn" data-id="${row.id}" data-table="${tableName}">Guardar</button>
+                    <button class="delete-btn" data-id="${row.id}" data-table="${tableName}">Eliminar</button>
                 </td>`;
             html += '</tr>';
         });
