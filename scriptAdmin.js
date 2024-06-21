@@ -1,6 +1,6 @@
 document.querySelectorAll('.denied').forEach(element => {
     element.onclick = function() {
-        alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
+        alert("Tu q, ni admin eres");
     };
 });
 

@@ -35,6 +35,7 @@ session_start();
                 <h2 class="header-name"> La Cerve </h2>
             </div>
             <nav class="header-right">
+                <a href="index.php"> Inicio </a>
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.php">Menú</a>
                     <a href="opiniones.php">Opiniones</a>
