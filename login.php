@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $user_id;
+            $_SESSION['username'] = $username;
             $_SESSION['logged_in'] = true;
             $_SESSION['role'] = $user_role;
             header("Location: index.php");

@@ -1,35 +1,22 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>La Cerve</title>
+        <title>Opiniones</title>
+        <link rel="stylesheet" href="cssop.css">
         <link rel="icon" href="assets/logo.png" type="image/x-icon">
-        <style>
-            .header-icon {
-                margin-right: 10px;
-                width: 150px;
-                cursor: pointer;
-            }
-            .header{
-                cursor: pointer;
-            }
-
-            .cta-button {
-                background-color: #6b1e1e;
-            }
-
-            .cta-button:hover {
-                background-color: #541111;
-            }
-        </style>
     </head>
     <body>
-        <header>
+    <header>
             <div class="header-left">
                 <img src="assets/logo.png" alt="Logo" class="header-logo">
                 <h2 class="header-name"> La Cerve </h2>
@@ -61,25 +48,32 @@ session_start();
         <script src="scriptindex.js"></script>
         </header>
         <main>
-            <div class="container1">
-                <section class="container">
-                    <h1>Bienvenido a La Cerve</h1>
-                    <p>Descubre el lugar perfecto para disfrutar de una noche especial con amigos o familia!!!. Ofrecemos los mejores snacks y micheladas en un ambiente único.</p>
-                    <img src="assets/Escena.png" alt="Ambiente de La Cerve" class="promo-image">
-                </section>
-            </div>
-            <section class="menu-section">
-                <h2>Lo Que Tenemos por Ofrecerte !!!</h2>
-                <div class="menu-grid">
-                    <?php include 'randomDisplay.php'; ?>
+            <div class="reseña-container">
+                <h1>Publicar Opinión</h1>
+                <div class="form-control">
+                    <label for="rating">Cantidad de Estrellas:</label>
+                    <select id="rating" required>
+                        <option value="0">0 estrellas</option>
+                        <option value="1">1 estrella</option>
+                        <option value="2">2 estrellas</option>
+                        <option value="3">3 estrellas</option>
+                        <option value="4">4 estrellas</option>
+                        <option value="5">5 estrellas</option>
+                    </select>
                 </div>
-                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="menu.php" class="cta-button">Explorar nuestro menú</a>
-                <?php else: ?>
-                    <a class="cta-button denied">Explorar nuestro menú</a>
-                <?php endif; ?>
-            </section>
-        </main>  
+                <div class="form-group">
+                    <label for="opinion">Opinión:</label>
+                    <textarea id="opinion" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn" id="submitReview">Guardar Opinión</button>
+                </div>
+            </div>
+            <div class="opinion-container">
+                <h2>Opiniones:</h2>
+                <div id="opinion-list"></div>
+            </div>
+        </main>
         <footer>
             <div class="footer-container">
                 <div class="footer-left">
@@ -94,12 +88,6 @@ session_start();
                 </div>
             </div>
         </footer>
+        <script src="jsop.js"></script>
     </body>
-    <script>
-        document.querySelectorAll('.denied').forEach(element => {
-            element.onclick = function() {
-                alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
-            };
-        });
-    </script>
 </html>

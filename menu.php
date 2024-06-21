@@ -25,7 +25,7 @@ if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             <nav class="header-right">
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                     <a href="menu.php">Menú</a>
-                    <a href="opiniones.html">Opiniones</a>
+                    <a href="opiniones.php">Opiniones</a>
                     <?php if ($_SESSION['role'] === 'admin'): ?>
                         <a href="admin.php">Admin</a>
                     <?php endif; ?>
