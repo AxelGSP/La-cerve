@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const doc = new jsPDF();
 
         let y = 10;
-        doc.text('Purchase Receipt', 10, y);
+        doc.text('Carrito de Compra', 10, y);
         y += 10;
 
         cartItems.forEach(item => {
