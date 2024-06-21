@@ -49,12 +49,14 @@ session_start();
             </nav>
             <div>
                 <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <img src="assets/iconlogin.png" alt="Logo" class="header-logo">
+                    <img src="assets/iconlogin.png" alt="Logo" class="header-logo" id="iconMenu">
+                    <div class="options-menu" id="optionsMenu">
+                        <a href="logout.php" class="option">Logout</a>
                 <?php else: ?>
                     <img src="assets/icon.png" alt="Logo" class="header-icon" id="iconMenu">
                     <div class="options-menu" id="optionsMenu">
-                    <div class="option" id="loginOption">Login</div>
-                    <div class="option" id="registerOption">Register</div>
+                        <div class="option" id="loginOption">Login</div>
+                        <div class="option" id="registerOption">Register</div>
                 <?php endif; ?>
             </div>
         </div>
