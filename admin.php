@@ -1,32 +1,24 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    header('Location: index.php');
+    exit;
+}
+
+if ($_SESSION['role'] !== 'admin') {
+    header('Location: index.php');
+    exit;
+}
 ?>
 
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styleAdmin.css">
         <title>La Cerve</title>
         <link rel="icon" href="assets/logo.png" type="image/x-icon">
-        <style>
-            .header-icon {
-                margin-right: 10px;
-                width: 150px;
-                cursor: pointer;
-            }
-            .header{
-                cursor: pointer;
-            }
-
-            .cta-button {
-                background-color: #6b1e1e;
-            }
-
-            .cta-button:hover {
-                background-color: #541111;
-            }
-        </style>
     </head>
     <body>
         <header>
@@ -58,27 +50,19 @@ session_start();
                 <?php endif; ?>
             </div>
         </div>
-        <script src="scriptindex.js"></script>
+            <script src="scriptindex.js"></script>
         </header>
         <main>
-            <div class="container1">
-                <section class="container">
-                    <h1>Bienvenido a La Cerve</h1>
-                    <p>Descubre el lugar perfecto para disfrutar de una noche especial con amigos o familia!!!. Ofrecemos los mejores snacks y micheladas en un ambiente único.</p>
-                    <img src="assets/Escena.png" alt="Ambiente de La Cerve" class="promo-image">
-                </section>
+            <div class="tabs">
+                <div class="tab" data-table="users">users</div>
+                <div class="tab" data-table="products">products</div>
+                <div class="tab" data-table="phrases">phrases</div>
             </div>
-            <section class="menu-section">
-                <h2>Lo Que Tenemos por Ofrecerte !!!</h2>
-                <div class="menu-grid">
-                    <?php include 'randomDisplay.php'; ?>
-                </div>
-                <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-                    <a href="menu.php" class="cta-button">Explorar nuestro menú</a>
-                <?php else: ?>
-                    <a class="cta-button denied">Explorar nuestro menú</a>
-                <?php endif; ?>
-            </section>
+            <div class="tab-content">
+                <div class="loading">like si lees esto</div>
+                <div class="table-content"></div>
+            </div>
+            <button id="add-row-btn" style="display: none;">Nuevo</button>
         </main>  
         <footer>
             <div class="footer-container">
@@ -95,11 +79,5 @@ session_start();
             </div>
         </footer>
     </body>
-    <script>
-        document.querySelectorAll('.denied').forEach(element => {
-            element.onclick = function() {
-                alert("Lo sentimos, no puede acceder a esta opcion sin un registro previo, lo invitamos a crear una cuenta personal");
-            };
-        });
-    </script>
+    <script src="scriptAdmin.js"> </script>
 </html>
